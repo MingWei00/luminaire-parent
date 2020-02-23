@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.mallproject.dao.RepertoryDao">
+    <select id="getPage" resultType="com.nf.mallproject.entity.Repertory">
+        select m_id,m_specification,m_price,m_cost_price,m_repertory from repertory order by r_cid
+    </select>
+
+    <insert id="insert">
+        insert into repertory(m_id,m_specification,m_price,m_cost_price,m_repertory) values(#{mId},#{mSpecification},#{mPrice},#{mCostPrice},#{mRepertory})
+    </insert>
+
+    <update id="update">
+        update repertory set m_id,m_specification,m_price,m_cost_price,m_repertory
+    </update>
+
+    <delete id="delete">
+        delete from repertory where r_id
+        <foreach collection="list" item="id" separator="," open="in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

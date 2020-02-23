@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.mallproject.dao.SmallCategoryDao">
+    <select id="getAll" resultType="com.nf.mallproject.entity.SmallCategory">
+        select s_cid,s_cname,b_cid from small_category
+    </select>
+
+    <select id="getPage" resultType="com.nf.mallproject.entity.SmallCategory">
+        select s_cid,s_cname,b_cid from small_category
+        <if test="param3 != null">
+            <where>
+                s_cname like "%"#{param3}"%"
+            </where>
+        </if>
+        order by s_cid
+    </select>
+
+    <insert id="insert">
+        insert into small_category(s_cname,b_cid) values(#{sCname},#{bCid})
+    </insert>
+
+    <update id="update">
+        update small_category set s_cname = #{sCname}, b_cid = #{bCid} where s_cid = #{sCid}
+    </update>
+
+    <delete id="delete">
+        delete from small_category where s_cid
+        <foreach collection="list" item="id" separator="," open="in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByBCid">
+        delete from small_category where b_cid
+        <foreach collection="list" item="id" separator="," open="in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

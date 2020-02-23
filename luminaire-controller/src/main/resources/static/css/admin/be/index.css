@@ -1,0 +1,19 @@
+.container{
+	width:100%;
+	padding:0px;
+}
+.remove{
+	width:15px;
+	height:15px;
+	margin-left:5px;
+}
+.remove:hover{
+	border-radius:10px;
+	border:1px solid white;
+}
+#myTab li a{
+		cursor:pointer;
+}
+
+
+
