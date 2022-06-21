@@ -31,7 +31,7 @@
         <mybatis-spring.version>2.0.2</mybatis-spring.version>
         <pagehelper.version>5.1.10</pagehelper.version>
         <junit.version>4.12</junit.version>
-        <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <security.version>5.0.12.RELEASE</security.version>
